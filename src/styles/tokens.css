@@ -1,0 +1,42 @@
+:root {
+  --hue: 32;
+  --mono-950: hsl(32 18% 7%);
+  --mono-900: hsl(32 16% 10%);
+  --mono-800: hsl(32 14% 16%);
+  --mono-700: hsl(32 12% 24%);
+  --mono-600: hsl(32 10% 34%);
+  --mono-500: hsl(32 9% 46%);
+  --mono-400: hsl(32 10% 58%);
+  --mono-300: hsl(32 12% 74%);
+  --mono-200: hsl(32 16% 86%);
+  --mono-100: hsl(32 22% 93%);
+  --mono-50: hsl(32 28% 97%);
+  --ink: hsl(32 20% 8%);
+  --paper: hsl(32 28% 97%);
+  --shadow: hsl(32 18% 7% / 0.12);
+  --sans: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+  --serif: 'Source Serif 4', 'Vazirmatn', ui-serif, Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+[data-theme='dark'] {
+  --bg: var(--mono-950);
+  --bg-raised: var(--mono-900);
+  --line: var(--mono-800);
+  --text: var(--mono-100);
+  --muted: var(--mono-400);
+  --fill: var(--mono-300);
+  --fill-strong: var(--mono-100);
+  --grain: hsl(32 20% 100% / 0.03);
+}
+
+[data-theme='light'] {
+  --bg: var(--paper);
+  --bg-raised: var(--mono-50);
+  --line: var(--mono-200);
+  --text: var(--ink);
+  --muted: var(--mono-500);
+  --fill: var(--mono-800);
+  --fill-strong: var(--ink);
+  --grain: hsl(32 18% 7% / 0.04);
+}

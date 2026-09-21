@@ -1,0 +1,232 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@theme {
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
+  --font-mono: var(--mono);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+:focus,
+:focus-visible {
+  outline: none;
+}
+
+::selection {
+  background: hsl(32 18% 50% / 0.28);
+}
+
+.sidebar-grain {
+  background-image: radial-gradient(var(--grain) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+}
+
+.titlebar {
+  app-region: drag;
+  -webkit-app-region: drag;
+}
+
+.titlebar button,
+.titlebar [data-no-drag],
+[data-no-drag] {
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.cm-editor {
+  height: auto;
+  background: transparent !important;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.cm-editor .cm-scroller {
+  font-family: inherit;
+  overflow: visible;
+}
+
+.cm-editor .cm-content {
+  padding: 2.75rem 2rem 6rem;
+  caret-color: var(--text);
+  max-width: 72ch;
+  margin: 0 auto;
+  unicode-bidi: plaintext;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+.cm-gutters {
+  display: none;
+}
+
+.cm-line {
+  padding: 0;
+}
+
+.font-mode-auto .cm-editor,
+.font-mode-auto .cm-content,
+.font-mode-serif .cm-editor,
+.font-mode-serif .cm-content {
+  font-family: var(--serif);
+}
+
+.font-mode-sans .cm-editor,
+.font-mode-sans .cm-content {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.font-mode-mono .cm-editor,
+.font-mode-mono .cm-content {
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cm-header-line-1 {
+  font-size: 1.85em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  padding-top: 0.4em;
+}
+
+.cm-header-line-2 {
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  padding-top: 0.5em;
+}
+
+.cm-header-line-3 {
+  font-size: 1.18em;
+  font-weight: 600;
+  padding-top: 0.35em;
+}
+
+.cm-header-line-4,
+.cm-header-line-5,
+.cm-header-line-6 {
+  font-size: 1.05em;
+  font-weight: 600;
+}
+
+.cm-strong {
+  font-weight: 600;
+}
+
+.cm-emphasis {
+  font-style: italic;
+}
+
+.cm-inline-code,
+.cm-editor .cm-inline-code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: color-mix(in hsl, var(--fill) 12%, transparent);
+  padding: 0.05em 0.3em;
+  border-radius: 2px;
+}
+
+.cm-callout-line {
+  border-inline-start: 2px solid var(--fill);
+  padding-inline-start: 0.85em;
+  color: var(--muted);
+}
+
+.cm-rtl-line {
+  direction: rtl;
+  text-align: right;
+}
+
+.disable-auto-rtl .cm-rtl-line {
+  direction: inherit;
+  text-align: inherit;
+}
+
+.cm-hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1.25rem 0;
+}
+
+.cm-wikilink {
+  color: var(--fill-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in hsl, var(--fill) 45%, transparent);
+  cursor: pointer;
+}
+
+.cm-wikilink-missing {
+  color: var(--muted);
+  text-decoration-style: dotted;
+}
+
+.cm-checkbox-wrap input {
+  appearance: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--fill);
+  border-radius: 2px;
+  background: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-end: 0.45rem;
+  cursor: pointer;
+}
+
+.cm-checkbox-wrap input:checked {
+  background: var(--fill);
+  box-shadow: inset 0 0 0 2px var(--bg);
+}
+
+.cm-tooltip-autocomplete {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 12px 28px var(--shadow) !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+}
+
+.cm-tooltip-autocomplete ul li[aria-selected] {
+  background: color-mix(in hsl, var(--fill) 16%, transparent) !important;
+  color: var(--text) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
